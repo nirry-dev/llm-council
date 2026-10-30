@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "llm-council"
+version = "0.1.0"
+description = "Multi-model consensus for local models: propose, blind peer review, and chair synthesis over any OpenAI-compatible endpoint."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Nirry" }]
+keywords = ["llm", "ensemble", "consensus", "local-llm", "llama.cpp", "ollama", "multi-agent"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+[project.scripts]
+council = "council.cli:main"
+
+[project.urls]
+Homepage = "https://nirry.net"
+Source = "https://github.com/nirry-dev/llm-council"
+
+[tool.hatch.build.targets.wheel]
+packages = ["council"]
